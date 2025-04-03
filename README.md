@@ -1,5 +1,12 @@
 # Wepachat
 
+## Setup for local development
+
+1. Clone the repository to your machine: `git clone git@github.com:Lenoxo/practice-wepachat.git`
+2. Go to the directory and install dependencies: `cd practice-wepachat && npm i`
+3. Run the development server with: `npm run dev`
+4. Lastly, go to `http://localhost:5173` using your favorite browser.
+
 ## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
