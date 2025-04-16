@@ -1,0 +1,9 @@
+* {
+    box-sizing: border-box;
+    color: white;
+    background-color: gray;
+}
+
+body {
+    margin: 0;
+}

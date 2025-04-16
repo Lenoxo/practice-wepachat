@@ -1,12 +1,17 @@
 import './App.css'
+import { Contacts } from './Contacts'
 
 function App() {
   return (
-    <>
-      <h2 className="welcome_title">
+    <main>
+    <Contacts />
+      <h2 className="welcome__title">
+      <img src='../../../wepa.png' alt='icon' />
+      <p>
         WepaChat
+      </p>
       </h2>
-    </>
+    </main>
   )
 }
 

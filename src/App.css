@@ -1,4 +1,9 @@
-.welcome_title {
-  font-size: 16px;
+.welcome__title {
   text-align: center;
+  width: 67vw;
+}
+
+main {
+  display: flex;
+  align-items: center;
 }

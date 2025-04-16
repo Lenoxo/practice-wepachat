@@ -1,0 +1,8 @@
+.contacts {
+    display: flex;
+    height: 100vh;
+    width: 33vw;
+    justify-content: center;
+    border: 2px solid whitesmoke;
+    padding: 10px;
+}
