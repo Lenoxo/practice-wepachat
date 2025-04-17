@@ -6,7 +6,7 @@ function App() {
     <main>
     <Contacts />
       <h2 className="welcome__title">
-      <img src='../../../wepa.png' alt='icon' />
+      <img src='../tempImages/wepa.png' alt='icon' />
       <p>
         WepaChat
       </p>
