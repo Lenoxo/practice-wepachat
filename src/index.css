@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box;
+    color: white;
+    background-color: #222222;
+    /* background-color: #857e7e; */
+}
+
+body {
+    margin: 0;
+}
