@@ -1,10 +1,10 @@
 import './App.css'
-import { Contacts } from './Contacts'
+import { Chats } from './Chats/Chats'
 
 function App() {
   return (
     <main>
-    <Contacts />
+    <Chats />
       <h2 className="welcome__title">
       <img src='../tempImages/wepa.png' alt='icon' />
       <p>
