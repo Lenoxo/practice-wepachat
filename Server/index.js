@@ -1,27 +1,16 @@
-// import WebSocket from "ws";
+import express from 'express';
+import { createServer } from 'node:http';
+import { Server } from 'socket.io';
 
-// const ws = new WebSocket('ws://localhost:8080')
+const app = express();
+const server = createServer(app);
+const io = new Server(server);
+const port = 3000;
 
-// ws.on('open', () => {
-//     ws.send("Server for websockets open")
-// })
+io.on('connection', (socket) => {
+    console.log('New connection');
+});
 
-// ws.on('message', (data) => {
-//     console.log('Received: %s ', data)
-// })
-
-// ws.on('error', console.error)
-
-import { WebSocketServer } from 'ws';
-
-const wss = new WebSocketServer({ port: 8080 });
-
-wss.on('connection', function connection(ws) {
-  ws.on('error', console.error);
-
-  ws.on('message', function message(data) {
-    console.log('received: %s', data);
-  });
-
-  ws.send('The server is ready for your messages >:)');
+app.listen(port, () => {
+    console.log('Hey, the server of ws is running in port ' + port);
 });

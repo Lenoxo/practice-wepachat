@@ -5,15 +5,18 @@
     "type": "module",
     "scripts": {
         "dev": "vite",
+        "ws": "node ./Server/index.js",
         "build": "tsc -b && vite build",
         "lint": "eslint .",
         "preview": "vite preview"
     },
     "dependencies": {
-        "@types/ws": "^8.18.1",
+        "@types/express": "^5.0.1",
+        "@types/socket.io": "^3.0.1",
+        "express": "^5.1.0",
         "react": "^19.0.0",
         "react-dom": "^19.0.0",
-        "ws": "^8.18.1"
+        "socket.io": "^4.8.1"
     },
     "devDependencies": {
         "@eslint/js": "^9.21.0",
