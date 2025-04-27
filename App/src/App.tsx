@@ -18,7 +18,7 @@ function App() {
         <main>
             <Chats />
             <h2 className="welcome__title">
-                <img src="../tempImages/wepa.png" alt="icon" />
+                <img src="./assets/tempImages/wepa.png" alt="icon" />
                 <p>WepaChat</p>
             </h2>
         </main>
