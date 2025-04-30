@@ -1,17 +1,11 @@
 import './App.css';
 import { Chats } from './Chats/Chats';
+import { socket } from './socket';
 
 function App() {
-    // const myFirstWebSocket = new WebSocket('ws://localhost:8080');
-
-    // myFirstWebSocket.addEventListener('open', () => {
-    //     console.log("Socket open!")
-    //     // myFirstWebSocket.send("Hello small world!")
-    // })
-
-    // myFirstWebSocket.addEventListener('message', (event) => {
-    //    console.log("New message from socket: ", event.data)
-    // })
+    socket.on('connect', () => {
+        console.info('Hey, connected bro');
+    });
 
     return (
         <main>
