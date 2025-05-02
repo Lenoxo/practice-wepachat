@@ -5,7 +5,7 @@ export function ChatItem() {
         <div className="chatItem">
             <img
                 className="chatItem__img"
-                src="../../tempImages/profile-default.svg"
+                src="/App/src/assets/profile-default.svg"
                 alt="contact"
             />
             <p>Romeo</p>
