@@ -1,14 +1,15 @@
 import './index.css';
 
-export function ChatItem() {
+interface Props {
+    name: string;
+    imgLink: string;
+}
+
+export function ChatItem({ name, imgLink }: Props) {
     return (
         <div className="chatItem">
-            <img
-                className="chatItem__img"
-                src="/App/src/assets/profile-default.svg"
-                alt="contact"
-            />
-            <p>Romeo</p>
+            <img className="chatItem__img" src={imgLink} alt="contact" />
+            <p>{name}</p>
         </div>
     );
 }

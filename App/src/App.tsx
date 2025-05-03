@@ -1,5 +1,6 @@
 import './App.css';
 import { Chats } from './Chats/Chats';
+import { profilesContext } from './context';
 import { socket } from './socket';
 
 function App() {
@@ -7,14 +8,37 @@ function App() {
         console.info('Hey, connected bro');
     });
 
+    const profiles = [
+        {
+            id: 'a23',
+            name: 'Willy',
+            description: 'Is a youtuber',
+            image: 'https://cdn.pfps.gg/pfps/9479-yuji-itadori.png'
+        },
+        {
+            id: 'a24',
+            name: 'Willy',
+            description: 'Is a youtuber',
+            image: 'https://cdn.pfps.gg/pfps/9479-yuji-itadori.png'
+        },
+        {
+            id: 'a25',
+            name: 'Willy',
+            description: 'Is a youtuber',
+            image: 'https://cdn.pfps.gg/pfps/9479-yuji-itadori.png'
+        }
+    ];
+
     return (
-        <main>
-            <Chats />
-            <h2 className="welcome__title">
-                <img src="/App/src/assets/wepa.png" alt="icon" />
-                <p>WepaChat</p>
-            </h2>
-        </main>
+        <profilesContext.Provider value={profiles}>
+            <main>
+                <Chats />
+                <h2 className="welcome__title">
+                    <img src="/App/src/assets/wepa.png" alt="icon" />
+                    <p>WepaChat</p>
+                </h2>
+            </main>
+        </profilesContext.Provider>
     );
 }
 
