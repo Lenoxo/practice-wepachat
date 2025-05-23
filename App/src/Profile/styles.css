@@ -1,0 +1,25 @@
+.profile {
+    position: fixed;
+    top: 40%;
+    right: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 460px;
+    background-color: black;
+}
+
+.profile__img {
+    max-width: 20vw;
+    max-height: 20vw;
+}
+
+.profile__label {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.profile__input {
+    margin-top: 10px;
+    border-radius: 8px;
+}
