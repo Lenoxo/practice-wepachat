@@ -11,7 +11,7 @@ function App() {
     const profiles = [
         {
             id: 'a23',
-            name: 'Willy',
+            name: 'Paco',
             description: 'Is a youtuber',
             image: 'https://cdn.pfps.gg/pfps/9479-yuji-itadori.png'
         },
@@ -23,7 +23,7 @@ function App() {
         },
         {
             id: 'a25',
-            name: 'Willy',
+            name: 'Oscar',
             description: 'Is a youtuber',
             image: 'https://cdn.pfps.gg/pfps/9479-yuji-itadori.png'
         }
