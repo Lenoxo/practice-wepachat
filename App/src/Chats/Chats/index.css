@@ -7,3 +7,22 @@
     border-right: 2px solid whitesmoke;
     padding: 10px;
 }
+
+.chats__search {
+    width: 80%;
+    height: 5%;
+    margin-bottom: 20px;
+
+    border-radius: 20px;
+    border: 1px solid inherit;
+
+    font-size: large;
+    text-align: center;
+}
+
+.chats__settings {
+    width: 20%;
+    height: 5%;
+    border: none;
+    cursor: pointer;
+}

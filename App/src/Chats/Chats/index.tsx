@@ -14,8 +14,6 @@ export function Chats() {
         // I use toLowerCase because it makes filtering matching easier, rather that being case sensitive
         const value = event.target.value.toLowerCase();
 
-        console.info(value);
-
         const updatedProfiles = profiles.filter((profile) => {
             if (profile.name.toLowerCase().includes(value)) {
                 return profile;
@@ -29,10 +27,13 @@ export function Chats() {
         <aside className="chats">
             <input
                 type="search"
-                placeholder="Search by contact name"
+                className="chats__search"
+                placeholder="🔎 Search by contact name"
                 onChange={handleSearchInputChange}
             />
-            <button onClick={() => setOpenModal(true)}>⚙️</button>
+            <button className="chats__settings" onClick={() => setOpenModal(true)}>
+                ⚙️
+            </button>
             {openModal && createPortal(<ProfileInfo setOpenModal={setOpenModal} />, document.body)}
             <h2>Chats</h2>
             <div className="chatList">
