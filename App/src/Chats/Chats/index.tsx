@@ -1,6 +1,6 @@
 import { useContext, useState } from 'react';
 import { ChatItem } from '../ChatItem';
-import './index.css';
+import './styles.css';
 import { profilesContext } from '../../context';
 import { createPortal } from 'react-dom';
 import { ProfileInfo } from '../../Profile/ProfileInfo';
@@ -11,7 +11,7 @@ export function Chats() {
     const [filteredProfiles, setFilteredProfiles] = useState(profiles);
 
     function handleSearchInputChange(event: React.ChangeEvent<HTMLInputElement>) {
-        // I use toLowerCase because it makes filtering matching easier, rather that being case sensitive
+        // I use toLowerCase because it makes filtering matching easier, rather than being case sensitive
         const value = event.target.value.toLowerCase();
 
         const updatedProfiles = profiles.filter((profile) => {
