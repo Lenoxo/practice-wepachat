@@ -13,6 +13,12 @@ const port = 3000;
 
 io.on('connection', (socket) => {
     console.log('New connection');
+
+    socket.on('chat message', (msg) => {
+        console.info('New message: ', msg);
+        io.emit('chat message', msg);
+        // socket.broadcast.emit('chat message', msg);
+    });
 });
 
 io.listen(port);
