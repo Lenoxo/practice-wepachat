@@ -1,7 +1,24 @@
 import { useRef } from 'react';
 import { socket } from '../../socket';
 
-export function NewMessage() {
+export function CurrentChat({ messages }: { messages: Array<string> }) {
+    return (
+        <section className="currentChat">
+            <ul id="messages">
+                {messages.map((msg, index) => {
+                    return (
+                        <li className="messages__item" key={index}>
+                            {msg}
+                        </li>
+                    );
+                })}
+            </ul>
+            <NewMessage />
+        </section>
+    );
+}
+
+function NewMessage() {
     const inputRef = useRef<HTMLInputElement>(null);
 
     function handleSubmit(event: React.FormEvent<HTMLFormElement>) {

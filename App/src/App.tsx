@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import './App.css';
 import { Chats } from './Chats/Chats';
-import { NewMessage } from './Chats/NewMessage/indext';
-import { ViewMessage } from './Chats/ViewMessage';
 import { profilesContext } from './context';
 import { socket } from './socket';
+import { CurrentChat } from './Chats/CurrentChat';
 
 function App() {
     const [messages, setMessages] = useState<Array<string>>([]);
@@ -45,8 +44,7 @@ function App() {
         <profilesContext.Provider value={profiles}>
             <main>
                 <Chats />
-                <NewMessage />
-                <ViewMessage messages={messages} />
+                <CurrentChat messages={messages} />
                 <h2 className="welcome__title">
                     <img src="/App/src/assets/wepa.png" alt="icon" />
                     <p>WepaChat</p>
