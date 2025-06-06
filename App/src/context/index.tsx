@@ -10,8 +10,3 @@ export const profilesContext = createContext<{
     currProfile: null,
     setCurrProfile: null
 });
-
-// export const profilesContext = createContext<{
-//     profiles: Profile[];
-//     currProfile: null | Profile;
-// }>();

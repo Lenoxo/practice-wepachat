@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import './App.css';
 import { Chats } from './Chats/Chats';
 import { CurrentChat } from './Chats/CurrentChat';
@@ -9,6 +9,16 @@ import { socket } from './socket';
 function App() {
     const [messages, setMessages] = useState<Array<string>>([]);
     const context = useContext(profilesContext);
+
+    const [showChat, setShowChat] = useState(false);
+
+    useEffect(() => {
+        if (context.currProfile) {
+            setShowChat(true);
+        } else {
+            setShowChat(false);
+        }
+    }, [context.currProfile]);
 
     function updateMessages(msg: string) {
         const newMessages = [...messages, msg];
@@ -21,7 +31,7 @@ function App() {
         <ProfilesProvider>
             <main>
                 <Chats />
-                {context.currProfile ? (
+                {showChat ? (
                     <CurrentChat messages={messages} />
                 ) : (
                     <div className="welcome__title">

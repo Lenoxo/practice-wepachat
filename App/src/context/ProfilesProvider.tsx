@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Profile } from '../types';
 import { socket } from '../socket';
 import { profilesContext } from '.';
@@ -27,14 +27,16 @@ export function ProfilesProvider({ children }: { children: React.ReactNode }) {
 
     const [currProfile, setCurrProfile] = useState<Profile | null>(profiles[0]);
 
+    useEffect(() => {
+        console.info(currProfile);
+    }, [currProfile]);
+
     socket.on('connect', () => {
         console.info('Hey, connected bro');
     });
 
     return (
-        <profilesContext.Provider
-            value={{ profiles: profiles, currProfile: currProfile, setCurrProfile: setCurrProfile }}
-        >
+        <profilesContext.Provider value={{ profiles, currProfile, setCurrProfile }}>
             {children}
         </profilesContext.Provider>
     );
