@@ -1,16 +1,14 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import './App.css';
 import { Chats } from './Chats/Chats';
+import { CurrentChat } from './Chats/CurrentChat';
+import { ProfilesProvider } from './context/ProfilesProvider';
 import { profilesContext } from './context';
 import { socket } from './socket';
-import { CurrentChat } from './Chats/CurrentChat';
 
 function App() {
     const [messages, setMessages] = useState<Array<string>>([]);
-
-    socket.on('connect', () => {
-        console.info('Hey, connected bro');
-    });
+    const context = useContext(profilesContext);
 
     function updateMessages(msg: string) {
         const newMessages = [...messages, msg];
@@ -19,38 +17,20 @@ function App() {
 
     socket.on('chat message', updateMessages);
 
-    const profiles = [
-        {
-            id: 'a23',
-            name: 'Paco',
-            description: 'Is a youtuber',
-            image: 'https://cdn.pfps.gg/pfps/9479-yuji-itadori.png'
-        },
-        {
-            id: 'a24',
-            name: 'Willy',
-            description: 'Is a youtuber',
-            image: 'https://cdn.pfps.gg/pfps/9479-yuji-itadori.png'
-        },
-        {
-            id: 'a25',
-            name: 'Oscar',
-            description: 'Is a youtuber',
-            image: 'https://cdn.pfps.gg/pfps/9479-yuji-itadori.png'
-        }
-    ];
-
     return (
-        <profilesContext.Provider value={profiles}>
+        <ProfilesProvider>
             <main>
                 <Chats />
-                <CurrentChat messages={messages} />
-                <h2 className="welcome__title">
-                    <img src="/App/src/assets/wepa.png" alt="icon" />
-                    <p>WepaChat</p>
-                </h2>
+                {context.currProfile ? (
+                    <CurrentChat messages={messages} />
+                ) : (
+                    <div className="welcome__title">
+                        <img src="/App/src/assets/wepa.png" alt="icon" />
+                        <p>WepaChat</p>
+                    </div>
+                )}
             </main>
-        </profilesContext.Provider>
+        </ProfilesProvider>
     );
 }
 

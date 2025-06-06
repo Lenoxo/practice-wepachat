@@ -10,3 +10,8 @@
     height: 50px;
     margin-right: 20px;
 }
+
+.chatItem:hover {
+    cursor: pointer;
+    background-color: #404040;
+}

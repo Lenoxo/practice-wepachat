@@ -6,7 +6,7 @@ import { createPortal } from 'react-dom';
 import { ProfileInfo } from '../../Profile/ProfileInfo';
 
 export function Chats() {
-    const profiles = useContext(profilesContext);
+    const { profiles } = useContext(profilesContext);
     const [openModal, setOpenModal] = useState<boolean>(false);
     const [filteredProfiles, setFilteredProfiles] = useState(profiles);
 
@@ -39,7 +39,12 @@ export function Chats() {
             <div className="chatList">
                 {filteredProfiles?.map((profile) => {
                     return (
-                        <ChatItem key={profile.id} imgLink={profile.image} name={profile.name} />
+                        <ChatItem
+                            key={profile.id}
+                            id={profile.id}
+                            image={profile.image}
+                            name={profile.name}
+                        />
                     );
                 })}
             </div>
