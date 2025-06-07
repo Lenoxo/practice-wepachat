@@ -17,3 +17,7 @@
     cursor: pointer;
     background-color: #404040;
 }
+
+.chatItem > p {
+    background-color: inherit;
+}

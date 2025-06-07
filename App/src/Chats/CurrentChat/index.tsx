@@ -1,20 +1,26 @@
-import { useRef } from 'react';
+import { useContext, useRef } from 'react';
 import { socket } from '../../socket';
+import { profilesContext } from '../../context';
+import './styles.css';
 
 export function CurrentChat({ messages }: { messages: Array<string> }) {
+    const { currProfile } = useContext(profilesContext);
     return (
-        <section className="currentChat">
-            <ul id="messages">
-                {messages.map((msg, index) => {
-                    return (
-                        <li className="messages__item" key={index}>
-                            {msg}
-                        </li>
-                    );
-                })}
-            </ul>
-            <NewMessage />
-        </section>
+        <>
+            <section className="currentChat">
+                <header className="currentChat__header">{currProfile?.name}</header>
+                <ul id="messages">
+                    {messages.map((msg, index) => {
+                        return (
+                            <li className="messages__item" key={index}>
+                                {msg}
+                            </li>
+                        );
+                    })}
+                </ul>
+                <NewMessage />
+            </section>
+        </>
     );
 }
 

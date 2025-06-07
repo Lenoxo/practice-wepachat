@@ -6,10 +6,10 @@ import { Profile } from '../../types';
 type Props = Omit<Profile, 'description'>;
 
 export function ChatItem({ id, image, name }: Props) {
-    const context = useContext(profilesContext);
+    const { profiles, setCurrProfile } = useContext(profilesContext);
 
     function handleClick(id: string) {
-        const profile = context.profiles.find((prof) => {
+        const profile = profiles.find((prof) => {
             return prof.id === id;
         });
 
@@ -19,11 +19,11 @@ export function ChatItem({ id, image, name }: Props) {
             );
         }
 
-        if (context.setCurrProfile === null) {
+        if (setCurrProfile === null) {
             throw new Error('context.setCurrProfile is null');
         }
 
-        context.setCurrProfile(profile);
+        setCurrProfile(profile);
         return;
     }
 

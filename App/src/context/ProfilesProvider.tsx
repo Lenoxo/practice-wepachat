@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Profile } from '../types';
 import { socket } from '../socket';
 import { profilesContext } from '.';
@@ -25,11 +25,7 @@ export function ProfilesProvider({ children }: { children: React.ReactNode }) {
         }
     ];
 
-    const [currProfile, setCurrProfile] = useState<Profile | null>(profiles[0]);
-
-    useEffect(() => {
-        console.info(currProfile);
-    }, [currProfile]);
+    const [currProfile, setCurrProfile] = useState<Profile | null>(null);
 
     socket.on('connect', () => {
         console.info('Hey, connected bro');
