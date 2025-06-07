@@ -1,0 +1,14 @@
+.currentChat {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    width: 77vw;
+    height: 100vh;
+}
+
+.currentChat__header {
+    height: 5%;
+    text-align: center;
+    border-bottom: 2px solid whitesmoke;
+}

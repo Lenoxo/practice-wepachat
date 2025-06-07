@@ -8,6 +8,10 @@
     padding: 10px;
 }
 
+.chatList {
+    width: 100%;
+}
+
 .chats__search {
     width: 80%;
     height: 5%;

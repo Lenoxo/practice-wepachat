@@ -7,8 +7,8 @@ interface Props {
 }
 
 export function ProfileInfo({ setOpenModal }: Props) {
-    const context = useContext(profilesContext);
-    const firstProfile = context[0];
+    const { profiles } = useContext(profilesContext);
+    const firstProfile = profiles[0];
 
     function handleClose() {
         if (setOpenModal) setOpenModal(false);
