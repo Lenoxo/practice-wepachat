@@ -16,7 +16,11 @@ export function ProfileInfo({ setOpenModal }: Props) {
     return (
         <section className="profile">
             <button onClick={handleClose}>Close</button>
-            <img className="profile__img" src={firstProfile.image} alt={firstProfile.name} />
+            <img
+                className="profile__img"
+                src={firstProfile.image}
+                alt="/App/src/assets/profile-default.svg"
+            />
             <label className="profile__label" htmlFor="name">
                 Name
             </label>
