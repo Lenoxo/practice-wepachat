@@ -9,10 +9,10 @@ export function CurrentChat({ messages }: { messages: Array<string> }) {
         <>
             <section className="currentChat">
                 <header className="currentChat__header">{currProfile?.name}</header>
-                <ul id="messages">
+                <ul id="currentChat__messagesList">
                     {messages.map((msg, index) => {
                         return (
-                            <li className="messages__item" key={index}>
+                            <li className="currentChat__message" key={index}>
                                 {msg}
                             </li>
                         );
@@ -39,10 +39,10 @@ function NewMessage() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="newMessage" onSubmit={handleSubmit}>
             <input
                 ref={inputRef}
-                className="messageInput"
+                className="newMessage__input"
                 type="text"
                 placeholder="Write a message here"
             />

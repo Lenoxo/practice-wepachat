@@ -5,7 +5,7 @@ import { profilesContext } from '../../context';
 import { createPortal } from 'react-dom';
 import { ProfileInfo } from '../../Profile/ProfileInfo';
 
-export function Chats() {
+export function ChatList() {
     const { profiles } = useContext(profilesContext);
     const [openModal, setOpenModal] = useState<boolean>(false);
     const [filteredProfiles, setFilteredProfiles] = useState(profiles);
@@ -24,19 +24,19 @@ export function Chats() {
     }
 
     return (
-        <aside className="chats">
+        <aside className="chatList">
             <input
                 type="search"
-                className="chats__search"
+                className="chatList__search"
                 placeholder="🔎 Search by contact name"
                 onChange={handleSearchInputChange}
             />
-            <button className="chats__settings" onClick={() => setOpenModal(true)}>
+            <button className="profileSettings" onClick={() => setOpenModal(true)}>
                 ⚙️
             </button>
             {openModal && createPortal(<ProfileInfo setOpenModal={setOpenModal} />, document.body)}
             <h2>Chats</h2>
-            <div className="chatList">
+            <div className="chatList__list">
                 {filteredProfiles?.map((profile) => {
                     return (
                         <ChatItem

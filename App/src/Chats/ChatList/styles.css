@@ -1,4 +1,4 @@
-.chats {
+.chatList {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -8,11 +8,11 @@
     padding: 10px;
 }
 
-.chatList {
+.chatList__list {
     width: 100%;
 }
 
-.chats__search {
+.chatList__search {
     width: 80%;
     height: 5%;
     margin-bottom: 20px;
@@ -24,7 +24,7 @@
     text-align: center;
 }
 
-.chats__settings {
+.profileSettings {
     width: 20%;
     height: 5%;
     border: none;
